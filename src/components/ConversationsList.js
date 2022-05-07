@@ -39,19 +39,25 @@ const ConversationsList = () => {
   }, [selectedConversation, setConversations, filterConversations]);
 
   useEffect(() => {
-
-  })
+    setConversations((draft) => {
+      draft.sort(function(a,b){
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b.lastMessageDate) - new Date(a.lastMessageDate);
+      });
+    })
+  }, [conversations])
 
   return (
-    <div className="px-4 py-6">
-      <img alt="Club" className="ml-auto mr-auto" src={'./logo.png'} style={{width: 110}}/>
-      <div className="flex justify-between items-center mt-4">
+    <div className="md:px-4 py-6">
+      <img alt="Club" className="md:block hidden ml-auto mr-auto" src={'./logo.png'} style={{width: 110}}/>
+      <div className="justify-between items-center mt-4 md:flex hidden">
         <img alt="Profile" style={{height: 35, width: 35}} className="rounded-full object-cover"
              src={authenticatedUser.picture}/>
         <p>{sortedConversations.length} {sortedConversations.length === 1 ? 'chat' : 'chats'}</p>
       </div>
 
-      <RoundedInput name="value" value={query.value} setForm={setQuery} classes="mt-4 mb-4"
+      <RoundedInput name="value" value={query.value} setForm={setQuery} classes="mt-4 mb-4 md:block hidden"
                     placeholder="Search a person"/>
 
       {sortedConversations.map((e) => {

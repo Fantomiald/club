@@ -1,6 +1,6 @@
 const defaultConversations = [
   {
-    lastMessageDate: new Date(),
+    lastMessageDate: new Date().toISOString(),
     selected: true,
     seen: true,
     id: 1,
@@ -18,7 +18,7 @@ const defaultConversations = [
     ]
   },
   {
-    lastMessageDate: new Date(),
+    lastMessageDate: new Date( Date.now() - 30000 * 60).toISOString(),
     selected: false,
     seen: true,
     id: 2,
@@ -28,7 +28,7 @@ const defaultConversations = [
     ]
   },
   {
-    lastMessageDate: new Date(),
+    lastMessageDate: new Date( Date.now() - 26000 * 60).toISOString(),
     selected: false,
     seen: false,
     id: 3,
