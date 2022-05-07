@@ -1,7 +1,7 @@
 import React from 'react';
 import users from "../data/users";
 
-const ConversationOtherMessage = ({ message }) => {
+const ConversationOtherMessage = ({message}) => {
   const user = users.find((e) => message.creator === e.id);
 
   return (

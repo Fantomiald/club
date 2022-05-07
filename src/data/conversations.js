@@ -9,7 +9,10 @@ const defaultConversations = [
       {creator: 1, content: "Dwight started a fire yesterday..."},
       {creator: 1, content: "He said it was an emergency test and we all failed"},
       {creator: 1, content: "He’s an idiot"},
-      {creator: 0, content: "And the song keeps going: 🎶 Ryannn started a fiireee 🎶 You should fire him"},
+      {
+        creator: 0,
+        content: "And the song keeps going: 🎶 Ryannn started a fiireee 🎶 You should fire him"
+      },
       {creator: 1, content: "Nahh"},
       {creator: 0, content: "Why?"},
       {creator: 1, content: "He's a good saleman"},
@@ -18,7 +21,7 @@ const defaultConversations = [
     ]
   },
   {
-    lastMessageDate: new Date( Date.now() - 30000 * 60).toISOString(),
+    lastMessageDate: new Date(Date.now() - 30000 * 60).toISOString(),
     selected: false,
     seen: true,
     id: 2,
@@ -28,7 +31,7 @@ const defaultConversations = [
     ]
   },
   {
-    lastMessageDate: new Date( Date.now() - 26000 * 60).toISOString(),
+    lastMessageDate: new Date(Date.now() - 26000 * 60).toISOString(),
     selected: false,
     seen: false,
     id: 3,

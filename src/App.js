@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import './App.css';
 import Main from "./routes/Main";
 import {ConversationProvider} from "./context/ConversationContext";
+import moment from "moment";
 
 function ScrollToTop() {
   const {pathname} = useLocation();
@@ -14,14 +15,14 @@ function ScrollToTop() {
   return null;
 }
 
-export const PrivateRoute = ({component: RouteComponent}) => {
-  const isAuthenticated = localStorage.getItem('club-at');
-
-  if (isAuthenticated) {
-    return <RouteComponent/>
+moment.updateLocale("en", {
+  relativeTime: {
+    future: (diff) => (diff == "now" ? diff : `in ${diff}`),
+    past: (diff) => (diff == "now" ? diff : `${diff} ago`),
+    s: "now",
+    ss: "now"
   }
-  return <Navigate to="/"/>
-}
+});
 
 export const LoginRoute = ({component: RouteComponent}) => {
   const isAuthenticated = localStorage.getItem('club-at');

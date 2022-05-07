@@ -2,7 +2,7 @@ const users = [
   {
     id: 0,
     picture: 'https://www.thispersondoesnotexist.com/image',
-      name: "Julien",
+    name: "Julien",
   },
   {
     id: 1,

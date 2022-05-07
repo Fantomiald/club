@@ -7,13 +7,13 @@ const Main = () => {
   return (
     <div className="w-screen h-screen flex">
       <div className="lg:w-1/5 md:w-1/4 border-r border-gray-300">
-        <ConversationsList />
+        <ConversationsList/>
       </div>
       <div className="lg:w-3/5 md:w-2/4">
-        <ConversationView />
+        <ConversationView/>
       </div>
       <div className="lg:w-1/5 md:w-1/4 border-l border-gray-300 hidden md:block">
-        <ConversationDetails />
+        <ConversationDetails/>
       </div>
     </div>
   );

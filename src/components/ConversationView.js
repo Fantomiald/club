@@ -59,10 +59,12 @@ const ConversationView = () => {
         <div className="px-3 py-2 flex-grow flex flex-col chat">
           {conversations.find((e) => e.id === selectedConversation.id).messages.map((e, index) => {
             if (e.creator === 0) {
-              return <div className="message justify-end items-end flex" key={index}><ConversationOwnMessage
-                message={e}/></div>
+              return <div className="message justify-end items-end flex" key={index}>
+                <ConversationOwnMessage
+                  message={e}/></div>
             }
-            return <div className="message" key={index}><ConversationOtherMessage message={e}/></div>
+            return <div className="message" key={index}><ConversationOtherMessage message={e}/>
+            </div>
           })}
         </div>
       </div>
