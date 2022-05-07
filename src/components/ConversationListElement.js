@@ -23,7 +23,7 @@ const ConversationListElement = ({conversationId}) => {
   const handlePress = () => {
     setSelectedConversation(conversation);
   }
-  console.log(conversation.lastMessageDate)
+
   return (
     <div onClick={handlePress}
          className={`${selectedConversation.id === conversation.id ? 'bg-gray-100' : 'bg-white'} cursor-pointer hover:opacity-80 flex flex-wrap transition-all p-3 rounded-xl`}>
